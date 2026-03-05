@@ -1,0 +1,4 @@
+interface:
+  display_name: "Git-Work-Summary"
+  short_description: "Summarize git work by author across repos."
+  default_prompt: "Use $summarizing-git-work-by-author to summarize recent git work by author across local repositories and branches."
