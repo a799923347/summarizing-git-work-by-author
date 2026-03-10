@@ -1,69 +1,69 @@
-# Summarizing Git Work By Author
+# 按作者总结 Git 工作
 
-A Claude Code skill for summarizing Git commits by author across multiple repositories.
+一个用于跨多个仓库按作者总结 Git 提交的 Claude Code 技能。
 
-## Features
+## 功能特性
 
-- Summarize commits across multiple local repositories
-- Support for current branch or all local branches
-- Multiple output formats: summary, details, and human-readable report
-- Automatic author detection from git config
-- Configurable commit limits
-- Author discovery mode
+- 跨多个本地仓库总结提交
+- 支持当前分支或所有本地分支
+- 多种输出格式：摘要、详细信息和人类可读报告
+- 从 git 配置自动检测作者
+- 可配置的提交数量限制
+- 作者发现模式
 
-## Installation
+## 安装
 
-### Option 1: Install to Claude Code skills directory
+### 选项 1：安装到 Claude Code 技能目录
 
 ```bash
-# Clone this repository
+# 克隆此仓库
 git clone https://github.com/your-username/summarizing-git-work-by-author.git
 
-# Copy to Claude Code skills directory
+# 复制到 Claude Code 技能目录
 cp -r summarizing-git-work-by-author ~/.claude/skills/
 ```
 
-### Option 2: Create a symlink (for development)
+### 选项 2：创建符号链接（用于开发）
 
 ```bash
 ln -s /path/to/summarizing-git-work-by-author ~/.claude/skills/summarizing-git-work-by-author
 ```
 
-## Usage
+## 使用方法
 
-Once installed, use the skill in Claude Code:
+安装后，在 Claude Code 中使用该技能：
 
 ```
 /summarizing-git-work-by-author
 ```
 
-Claude will guide you through selecting:
-- Repository scope
-- Time range
-- Branch scope
-- Author to summarize
+Claude 将引导你选择：
+- 仓库范围
+- 时间范围
+- 分支范围
+- 要总结的作者
 
-## Direct Script Usage
+## 直接使用脚本
 
-You can also use the bundled script directly:
+你也可以直接使用附带的脚本：
 
 ```bash
-# Show help
+# 显示帮助
 bash scripts/summarize_git_work.sh --help
 
-# List authors in the time window
+# 列出时间窗口内的作者
 bash scripts/summarize_git_work.sh \
   --root /path/to/repos \
   --since '1 week ago' \
   --list-authors
 
-# Generate human-readable report
+# 生成人类可读报告
 bash scripts/summarize_git_work.sh \
   --root /path/to/repos \
   --since '1 week ago' \
   --format report
 
-# Detailed output with commit limit
+# 带提交限制的详细输出
 bash scripts/summarize_git_work.sh \
   --root /path/to/repos \
   --since '3 weeks ago' \
@@ -73,16 +73,16 @@ bash scripts/summarize_git_work.sh \
   --max-commits 20
 ```
 
-## Requirements
+## 系统要求
 
 - Bash shell
 - Git
-- Claude Code (for skill integration)
+- Claude Code（用于技能集成）
 
-## License
+## 许可证
 
 MIT
 
-## Contributing
+## 贡献
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+欢迎贡献！请随时提交 Pull Request。
