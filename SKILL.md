@@ -1,6 +1,6 @@
 ---
 name: summarizing-git-work-by-author
-description: Use when summarizing git commits by author across one repository or a directory of local repositories, especially when results may depend on branch scope, author aliases, or turning commit details into report-ready summaries
+description: 用于按作者汇总单个仓库或本地多个仓库目录下的 git 提交记录，尤其适用于结果依赖于分支范围、作者别名，或需要将提交详情整理成可用于汇报的总结的场景
 ---
 
 # Summarizing Git Work By Author
@@ -43,34 +43,34 @@ Do not use this skill when:
 
 ## Script
 
-Run the bundled script:
+Run the bundled script. In the examples below, `${SKILL_DIR}` refers to the directory containing this `SKILL.md` file — substitute it with the actual install path of this skill on your machine.
 
 ```bash
-bash /Users/zhaobaowen/.agents/skills/summarizing-git-work-by-author/scripts/summarize_git_work.sh --help
+bash ${SKILL_DIR}/scripts/summarize_git_work.sh --help
 ```
 
 Typical commands:
 
 ```bash
 # Discover the exact author identity used in recent commits
-bash /Users/zhaobaowen/.agents/skills/summarizing-git-work-by-author/scripts/summarize_git_work.sh \
+bash ${SKILL_DIR}/scripts/summarize_git_work.sh \
   --root /path/to/repos \
   --since '1 week ago' \
   --list-authors
 
 # Current-branch summary (auto-detects author from git config)
-bash /Users/zhaobaowen/.agents/skills/summarizing-git-work-by-author/scripts/summarize_git_work.sh \
+bash ${SKILL_DIR}/scripts/summarize_git_work.sh \
   --root /path/to/repos \
   --since '7 days ago'
 
 # Human-readable report format (default max 10 commits per repo)
-bash /Users/zhaobaowen/.agents/skills/summarizing-git-work-by-author/scripts/summarize_git_work.sh \
+bash ${SKILL_DIR}/scripts/summarize_git_work.sh \
   --root /path/to/repos \
   --since '1 week ago' \
   --format report
 
 # Per-branch details with commit limit
-bash /Users/zhaobaowen/.agents/skills/summarizing-git-work-by-author/scripts/summarize_git_work.sh \
+bash ${SKILL_DIR}/scripts/summarize_git_work.sh \
   --root /path/to/repos \
   --since '3 weeks ago' \
   --author-pattern 'your-name|your.email@example.com' \

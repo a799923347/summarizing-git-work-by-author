@@ -50,6 +50,7 @@ while [ "$#" -gt 0 ]; do
       ;;
     --author-pattern)
       AUTHOR_PATTERN="${2:-}"
+      AUTHOR_GIT_PATTERN="${AUTHOR_PATTERN//|/\\|}"
       shift 2
       ;;
     --mode)
@@ -109,7 +110,7 @@ fi
 if [ -z "$AUTHOR_PATTERN" ] && [ "$LIST_AUTHORS" -eq 0 ]; then
   DEFAULT_AUTHOR="$(git config user.name 2>/dev/null || echo 'your-name')"
   AUTHOR_PATTERN="$DEFAULT_AUTHOR"
-  AUTHOR_GIT_PATTERN="${AUTHOR_PATTERN//|/\\|}"
+  AUTHOR_GIT_PATTERN="$DEFAULT_AUTHOR"
 fi
 
 # Default max commits for report format (empty or 0 means use default)

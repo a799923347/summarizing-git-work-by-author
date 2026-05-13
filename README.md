@@ -13,17 +13,7 @@
 
 ## 安装
 
-### 选项 1：安装到 Claude Code 技能目录
-
-```bash
-# 克隆此仓库
-git clone https://github.com/your-username/summarizing-git-work-by-author.git
-
-# 复制到 Claude Code 技能目录
-cp -r summarizing-git-work-by-author ~/.claude/skills/
-```
-
-### 选项 2：创建符号链接（用于开发）
+创建符号链接到 Claude Code 技能目录：
 
 ```bash
 ln -s /path/to/summarizing-git-work-by-author ~/.claude/skills/summarizing-git-work-by-author
@@ -82,7 +72,3 @@ bash scripts/summarize_git_work.sh \
 ## 许可证
 
 MIT
-
-## 贡献
-
-欢迎贡献！请随时提交 Pull Request。
